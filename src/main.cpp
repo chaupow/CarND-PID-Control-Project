@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
   bool let_robot_run = true;
   
   if (twiddle == true) pid.Init(p[0],p[1],p[2]);
-  else if (argc == 4) { pid.Init(std::stod(argv[1]), std::stod(argv[2]), std::stod(argv[3]));
+  else if (argc == 4) pid.Init(std::stod(argv[1]), std::stod(argv[2]), std::stod(argv[3]));
   else pid.Init(0.577838,1e-05,7.48411);
 
   h.onMessage([&pid, &p, &dp, &timestep, &max_timestep, &tol, &error, &best_error, &p_iter, &let_robot_run, &total_cte, &first_run, &second_run, &twiddle, &best_p]
